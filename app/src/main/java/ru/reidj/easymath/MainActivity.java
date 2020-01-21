@@ -13,10 +13,12 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText firstNumber;
     private EditText secondNumber;
+    private EditText firstRoot;
+    private EditText secondRoot;
+    private EditText thirdRoot;
     private TextView result;
+    private TextView resultRoot;
     private double res = 0;
-    private double x;
-    private double x1, x2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         /*Инициализация переменных*/
         firstNumber = findViewById(R.id.FirstNumber);
+        firstRoot = findViewById(R.id.a);
         secondNumber = findViewById(R.id.SecondNumber);
+        secondRoot = findViewById(R.id.b);
+        thirdRoot = findViewById(R.id.c);
         result = findViewById(R.id.Result);
+        resultRoot = findViewById(R.id.ResultRoot);
     }
 
     @SuppressLint("SetTextI18n")
@@ -54,13 +60,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void discriminant(View v) {
-        EditText firstRoot = findViewById(R.id.a);
-        EditText secondRoot = findViewById(R.id.b);
-        EditText thirdRoot = findViewById(R.id.c);
-        TextView resultRoot = findViewById(R.id.ResultRoot);
+    public void onDiscriminant(View v) {
 
-        if(TextUtils.isEmpty(firstRoot.getText().toString()) || TextUtils.isEmpty(secondRoot.getText().toString()) || TextUtils.isEmpty(thirdRoot.getText().toString()))
+        if (TextUtils.isEmpty(firstRoot.getText().toString()) || TextUtils.isEmpty(secondRoot.getText().toString()) || TextUtils.isEmpty(thirdRoot.getText().toString()))
             return;
 
         double root1 = Double.parseDouble(firstRoot.getText().toString());
@@ -70,14 +72,24 @@ public class MainActivity extends AppCompatActivity {
         if (v.getId() == R.id.SolveRoot) {
             double d = root2 * root2 - 4 * root1 * root3;
             if (d > 0) {
-                x1 = ((-1) * root2 + Math.sqrt(d)) / (2 * root1);
-                x2 = ((-1) * root2 - Math.sqrt(d)) / (2 * root1);
+                double x1 = ((-1) * root2 + Math.sqrt(d)) / (2 * root1);
+                double x2 = ((-1) * root2 - Math.sqrt(d)) / (2 * root1);
                 resultRoot.setText("x1 = " + x1 + " x2 = " + x2);
             } else if (d == 0) {
-                x = ((-1) * root2/ (2 * root1));
+                double x = ((-1) * root2 / (2 * root1));
                 resultRoot.setText("Уравнение имеет 1 корень = " + x);
             } else
                 resultRoot.setText("Уравнение не имеет корней");
         }
+    }
+
+    public void onClear(View v) {
+        /*Очистка полей*/
+        firstNumber.setText(null);
+        secondNumber.setText(null);
+        firstRoot.setText(null);
+        secondRoot.setText(null);
+        thirdRoot.setText(null);
+
     }
 }
