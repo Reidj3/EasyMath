@@ -11,28 +11,28 @@
         android:layout_width="160dp"
         android:layout_height="45dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="52dp"
         android:layout_marginEnd="18dp"
+        android:layout_marginBottom="656dp"
         android:ems="10"
         android:hint="Введите 1 число"
         android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/SecondNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/SecondNumber"
         android:layout_width="160dp"
         android:layout_height="45dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="53dp"
         android:layout_marginEnd="18dp"
+        android:layout_marginBottom="656dp"
         android:ems="10"
         android:hint="Введите 2 число"
         android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/FirstNumber"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/FirstNumber" />
 
     <Button
         android:id="@+id/Plus"
@@ -40,23 +40,28 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="492dp"
+        android:layout_marginBottom="568dp"
         android:onClick="onClick"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Minus"
         app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstNumber"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Result"
         android:layout_width="250dp"
         android:layout_height="47dp"
         android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginBottom="564dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="288dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -68,14 +73,17 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="492dp"
+        android:layout_marginBottom="568dp"
         android:onClick="onClick"
         android:text="-"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Multiply"
-        app:layout_constraintStart_toEndOf="@+id/Plus" />
+        app:layout_constraintStart_toEndOf="@+id/Plus"
+        app:layout_constraintTop_toBottomOf="@+id/FirstNumber"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Multiply"
@@ -83,14 +91,17 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="492dp"
+        android:layout_marginBottom="568dp"
         android:onClick="onClick"
         android:text="*"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Share"
-        app:layout_constraintStart_toEndOf="@+id/Minus" />
+        app:layout_constraintStart_toEndOf="@+id/Minus"
+        app:layout_constraintTop_toBottomOf="@+id/SecondNumber"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Share"
@@ -98,29 +109,17 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="492dp"
+        android:layout_marginBottom="568dp"
         android:onClick="onClick"
         android:text="/"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Clear"
-        app:layout_constraintStart_toEndOf="@+id/Multiply" />
-
-    <Button
-        android:id="@+id/Clear"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="492dp"
-        android:onClick="onClear"
-        android:text="C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Share" />
+        app:layout_constraintEnd_toStartOf="@+id/Cube"
+        app:layout_constraintStart_toEndOf="@+id/Multiply"
+        app:layout_constraintTop_toBottomOf="@+id/SecondNumber"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/a"
@@ -130,9 +129,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="468dp"
         android:ems="10"
-        android:hint="x"
+        android:hint="a"
         android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/b"
@@ -146,9 +145,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="468dp"
         android:ems="10"
-        android:hint="y"
+        android:hint="b"
         android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/c"
@@ -162,28 +161,14 @@
         android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginBottom="468dp"
         android:ems="10"
-        android:hint="z"
+        android:hint="c"
         android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/b" />
-
-    <TextView
-        android:id="@+id/ResultRoot"
-        android:layout_width="250dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginBottom="328dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/SolveRoot"
@@ -193,11 +178,68 @@
         android:layout_marginLeft="72dp"
         android:layout_marginEnd="72dp"
         android:layout_marginRight="72dp"
-        android:layout_marginBottom="258dp"
+        android:layout_marginBottom="384dp"
         android:onClick="onDiscriminant"
         android:text="Решить уравнение"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.919" />
+
+    <Button
+        android:id="@+id/Clear"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="341dp"
+        android:layout_marginLeft="341dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="508dp"
+        android:onClick="onClear"
+        android:text="@string/c"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Cube"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Cube"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="568dp"
+        android:onClick="onCube"
+        android:text="∛"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Share"
+        app:layout_constraintTop_toBottomOf="@+id/SecondNumber"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/CubeNumber"
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="352dp"
+        android:ems="10"
+        android:hint="Вычислить ∛"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
