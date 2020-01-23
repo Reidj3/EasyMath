@@ -3,6 +3,7 @@ package ru.reidj.easymath;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText thirdRoot;
     private EditText cubeNumber;
     private TextView result;
-    private TextView resultRoot;
+
     private double res = 0;
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         thirdRoot = findViewById(R.id.c);
         cubeNumber = findViewById(R.id.CubeNumber);
         result = findViewById(R.id.Result);
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Share:
                 res = num1 / num2;
                 break;
-            case R.id.Cube:
         }
         result.setText("" + res);
     }
@@ -98,10 +99,23 @@ public class MainActivity extends AppCompatActivity {
     public void onCube(View v) {
         if (TextUtils.isEmpty(cubeNumber.getText().toString()))
             return;
-
         double cube = Double.parseDouble(cubeNumber.getText().toString());
 
-        if (v.getId() == R.id.Cube)
-            result.setText("∛ =  " + Math.cbrt(cube) + "");
+        switch (v.getId()) {
+            case R.id.Sqrt:
+                result.setText("∛ =  " + Math.cbrt(cube));
+                break;
+            case R.id.Cube:
+                result.setText("√ = " + Math.sqrt(cube));
+                break;
+            case R.id.Sinus:
+                result.setText("" + Math.sin(cube));
+                break;
+            case R.id.Cosinus:
+                result.setText("" + Math.cos(cube));
+                break;
+            case R.id.Tangens:
+                result.setText("" + Math.tan(cube));
+        }
     }
 }

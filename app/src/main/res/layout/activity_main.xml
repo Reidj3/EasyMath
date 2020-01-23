@@ -55,7 +55,7 @@
 
     <TextView
         android:id="@+id/Result"
-        android:layout_width="250dp"
+        android:layout_width="290dp"
         android:layout_height="47dp"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
@@ -192,20 +192,16 @@
         android:id="@+id/Clear"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_marginStart="341dp"
-        android:layout_marginLeft="341dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="508dp"
+        android:layout_marginBottom="536dp"
         android:onClick="onClear"
         android:text="@string/c"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Cube"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/Sqrt" />
 
     <Button
         android:id="@+id/Cube"
@@ -235,11 +231,71 @@
         android:layout_marginRight="18dp"
         android:layout_marginBottom="352dp"
         android:ems="10"
-        android:hint="Вычислить ∛"
+        android:hint="Вычислить √"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Sqrt"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="536dp"
+        android:onClick="onCube"
+        android:text="√"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Clear"
+        app:layout_constraintStart_toEndOf="@+id/Tangens" />
+
+    <Button
+        android:id="@+id/Tangens"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="536dp"
+        android:onClick="onCube"
+        android:text="tan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Sqrt"
+        app:layout_constraintStart_toEndOf="@+id/Cosinus" />
+
+    <Button
+        android:id="@+id/Cosinus"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="536dp"
+        android:onClick="onCube"
+        android:text="cos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Tangens"
+        app:layout_constraintStart_toEndOf="@+id/Sinus" />
+
+    <Button
+        android:id="@+id/Sinus"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="536dp"
+        android:onClick="onCube"
+        android:text="sin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Cosinus"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
