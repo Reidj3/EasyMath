@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText cubeNumber;
     private TextView result;
     private double res = 0;
-    double x,п,k;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.Share:
                 res = num1 / num2;
+                break;
+            default:
                 break;
         }
         result.setText("" + res);
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.Tangens:
                 result.setText("" + Math.tan(Math.toRadians(num)));
-            case  R.id.Log10:
+            case R.id.Log10:
                 result.setText("" + Math.log10(num));
                 break;
             case R.id.Log:

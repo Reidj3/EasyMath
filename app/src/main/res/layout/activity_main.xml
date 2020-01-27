@@ -15,7 +15,7 @@
         android:layout_marginBottom="656dp"
         android:ems="10"
         android:hint="Введите 1 число"
-        android:inputType="number|numberDecimal|phone"
+        android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/SecondNumber"
         app:layout_constraintStart_toStartOf="parent" />
@@ -29,7 +29,7 @@
         android:layout_marginBottom="656dp"
         android:ems="10"
         android:hint="Введите 2 число"
-        android:inputType="number|numberDecimal|phone"
+        android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/FirstNumber" />
