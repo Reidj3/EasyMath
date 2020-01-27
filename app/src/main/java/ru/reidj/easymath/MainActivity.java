@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText firstNumber;
     private EditText secondNumber;
     private EditText firstRoot;
@@ -19,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText thirdRoot;
     private EditText cubeNumber;
     private TextView result;
-
     private double res = 0;
+    double x,п,k;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /*Инициализация переменных*/
@@ -37,10 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @SuppressLint("SetTextI18n")
     public void onClick(View v) {
+        /*Проверка на пустые поля*/
         if (TextUtils.isEmpty(firstNumber.getText().toString()) || TextUtils.isEmpty(secondNumber.getText().toString()))
             return;
+
         /*Создание переменных*/
         double num1 = Double.parseDouble(firstNumber.getText().toString());
         double num2 = Double.parseDouble(secondNumber.getText().toString());
@@ -99,23 +99,29 @@ public class MainActivity extends AppCompatActivity {
     public void onCube(View v) {
         if (TextUtils.isEmpty(cubeNumber.getText().toString()))
             return;
-        double cube = Double.parseDouble(cubeNumber.getText().toString());
+        double num = Double.parseDouble(cubeNumber.getText().toString());
 
         switch (v.getId()) {
-            case R.id.Sqrt:
-                result.setText("∛ =  " + Math.cbrt(cube));
-                break;
             case R.id.Cube:
-                result.setText("√ = " + Math.sqrt(cube));
+                result.setText("∛ =  " + Math.cbrt(num));
+                break;
+            case R.id.Sqrt:
+                result.setText("√ = " + Math.sqrt(num));
                 break;
             case R.id.Sinus:
-                result.setText("" + Math.sin(cube));
+                result.setText("" + Math.sin(Math.toRadians(num)));
                 break;
             case R.id.Cosinus:
-                result.setText("" + Math.cos(cube));
+                result.setText("" + Math.cos(Math.toRadians(num)));
                 break;
             case R.id.Tangens:
-                result.setText("" + Math.tan(cube));
+                result.setText("" + Math.tan(Math.toRadians(num)));
+            case  R.id.Log10:
+                result.setText("" + Math.log10(num));
+                break;
+            case R.id.Log:
+                result.setText("" + Math.log(num));
+                break;
         }
     }
 }
