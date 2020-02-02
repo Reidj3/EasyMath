@@ -123,6 +123,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Log:
                 result.setText("" + Math.log(num));
                 break;
+            case R.id.Square:
+                result.setText("" + num * num);
+            default:
+                break;
         }
     }
 }

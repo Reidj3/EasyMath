@@ -320,4 +320,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Log10" />
 
+    <Button
+        android:id="@+id/Square"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="484dp"
+        android:onClick="onCube"
+        android:text="a^2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Log" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
