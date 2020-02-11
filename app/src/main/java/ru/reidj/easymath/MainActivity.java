@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void onClick(View v) {
         /*Проверка на пустые поля*/
         if (TextUtils.isEmpty(firstNumber.getText().toString()) || TextUtils.isEmpty(secondNumber.getText().toString()))
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Share:
                 res = num1 / num2;
                 break;
+            case R.id.Square:
+                res = Math.pow(num1, num2);
+                result.setText("" + res);
             default:
                 break;
         }
@@ -97,10 +101,11 @@ public class MainActivity extends AppCompatActivity {
         cubeNumber.setText(null);
     }
 
+    @SuppressLint("SetTextI18n")
     public void onCube(View v) {
         if (TextUtils.isEmpty(cubeNumber.getText().toString()))
             return;
-        double num = Double.parseDouble(cubeNumber.getText().toString());
+        int num = Integer.parseInt(cubeNumber.getText().toString());
 
         switch (v.getId()) {
             case R.id.Cube:
@@ -123,8 +128,18 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Log:
                 result.setText("" + Math.log(num));
                 break;
-            case R.id.Square:
-                result.setText("" + num * num);
+            case R.id.Bin:
+                String convert = Integer.toBinaryString(num);
+                result.setText(convert);
+                break;
+            case R.id.Oct:
+                convert = Integer.toOctalString(num);
+                result.setText(convert);
+                break;
+            case R.id.Dec:
+                convert = Integer.toHexString(num);
+                result.setText(convert);
+                break;
             default:
                 break;
         }
